@@ -1,12 +1,7 @@
 package com.play;
 
-public class Teacher
+public class Teacher extends SchoolMember
 {
-    private String name;
-    private short classFloor;
-    private short classNumber;
-    private short currentLocation;
-
 
     Teacher(String name, short classFloor, short classNumber)
     {
@@ -14,6 +9,5 @@ public class Teacher
         this.classFloor = classFloor;
         this.classNumber = classNumber;
     };
-
-    
+   
 }

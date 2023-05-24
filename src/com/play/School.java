@@ -15,5 +15,12 @@ public class School
             floors[i] = new Floor();
     }
 
+    public void enter(SchoolMember schoolMember) {
+        System.out.println(schoolMember.getName() + "enters school");
+    }
+
+    public void exit(SchoolMember schoolMember) {
+        System.out.println(schoolMember.getName() + "exits school");
+    }
 
 }
