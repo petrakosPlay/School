@@ -7,12 +7,13 @@ public class School
     private Yard yard;
     private Staircase staircase;
 
-    public School()
+    public School(short maxYardCapacity, short maxStaircaseCapacity)
     {
-        yard = new Yard();
-        staircase = new Staircase();
-        for (byte i=0; i < NUMBER_OF_FLOORS; ++i)
-            floors[i] = new Floor();
+        yard = new Yard(maxYardCapacity);
+        //staircase = new Staircase(maxStaircaseCapacity);
+        //for (byte i=0; i < NUMBER_OF_FLOORS; ++i)
+        //    floors[i] = new Floor(i);
+        System.out.println("A new School has been created!");
     }
 
     public void enter(SchoolMember schoolMember) {
