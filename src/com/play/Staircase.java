@@ -17,10 +17,10 @@ public class Staircase extends SchoolSpace
 
     @Override
     public void enter(SchoolMember schoolMember) {
-        if(this.capacity < MAX_CAPACITY)
+        if(this.currentCapacity < MAX_CAPACITY)
         {
             System.out.println(schoolMember.getName() + "enters Staircase");
-            this.capacity++;
+            this.currentCapacity++;
         }
     }
 

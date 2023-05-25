@@ -15,6 +15,7 @@ public class Floor extends SchoolSpace {
         classes = new Class[6];
         for(int i=0; i < NUMBER_OF_CLASSES; ++i)
             classes[i] = new Class();
+        System.out.println("Floor number " + this.floorNumber + " has been created");
         
     }
 
