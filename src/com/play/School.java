@@ -10,7 +10,7 @@ public class School
     public School(short maxYardCapacity, short maxStaircaseCapacity)
     {
         yard = new Yard(maxYardCapacity);
-        //staircase = new Staircase(maxStaircaseCapacity);
+        staircase = new Staircase(maxStaircaseCapacity);
         //for (byte i=0; i < NUMBER_OF_FLOORS; ++i)
         //    floors[i] = new Floor(i);
         System.out.println("A new School has been created!");

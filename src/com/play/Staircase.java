@@ -4,12 +4,15 @@ public class Staircase extends SchoolSpace
 {
     
     private final short MAX_CAPACITY;
-    private short capacity;
+    private short currentCapacity;
+    private SchoolMember[] currentMembers;
 
     public Staircase(short maxCapacity)
     {
         this.MAX_CAPACITY = maxCapacity;
-        capacity = 0;
+        currentCapacity = 0;
+        currentMembers = new SchoolMember[MAX_CAPACITY];
+        System.out.println("A new Staircase with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
 
     @Override
