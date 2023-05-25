@@ -8,15 +8,14 @@ public class Floor extends SchoolSpace {
     private byte floorNumber;
 
 
-    public Floor(byte floorNumber)
+    public Floor(byte floorNumber, short maxCorridorCapacity, short maxClassCapacity)
     {
         this.floorNumber = floorNumber;
-        corridor = new Corridor();
-        classes = new Class[6];
-        for(int i=0; i < NUMBER_OF_CLASSES; ++i)
-            classes[i] = new Class();
+        corridor = new Corridor(maxCorridorCapacity);
+        classes = new Class[NUMBER_OF_CLASSES];
+        for(byte i=0; i < NUMBER_OF_CLASSES; ++i)
+            classes[i] = new Class( (byte) (i+1), maxClassCapacity);
         System.out.println("Floor number " + this.floorNumber + " has been created");
-        
     }
 
 

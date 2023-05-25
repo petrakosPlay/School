@@ -2,23 +2,26 @@ package com.play;
 
 public class Corridor extends SchoolSpace
 {
-    private final static short MAX_CAPACITY = 200;
+    private final short MAX_CAPACITY;
+    private short currentCapacity;
+    private SchoolMember[] currentMembers;
 
-    private short capacity;
 
-
-    public Corridor()
+    public Corridor(short maxCapacity)
     {
-        capacity = 0;
+        this.MAX_CAPACITY = maxCapacity;
+        this.currentCapacity = 0;
+        currentMembers = new SchoolMember[MAX_CAPACITY];
+        System.out.println("A new Corridor with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
 
 
     @Override
     public void enter(SchoolMember schoolMember) {
-        if(this.capacity < MAX_CAPACITY)
+        if(this.currentCapacity < MAX_CAPACITY)
         {
             System.out.println(schoolMember.getName() + "enters Corridor");
-            this.capacity++;
+            this.currentCapacity++;
         }
     }
 

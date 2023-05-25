@@ -2,19 +2,22 @@ package com.play;
 
 public class Class 
 {
-    private final static short MAX_CAPACITY = 30;
+    private final short MAX_CAPACITY;
+    private short currentCapacity;
+    private SchoolMember[] currentMembers;
+    private byte classNumber;
 
 
-    private short studentCapacity;
-    private Student[] students;
-    private Teacher teacher;
 
-
-    public Class()
+    public Class(byte classNumber, short maxCapacity)
     {
-        studentCapacity = 0;
-        students = new Student[MAX_CAPACITY];
-        //teacher = new Teacher();
+        this.MAX_CAPACITY = maxCapacity;
+        this.currentCapacity = 0;
+        this.classNumber = classNumber;
+        currentMembers = new SchoolMember[MAX_CAPACITY];
+        System.out.println("A new Class number " + this.classNumber + 
+                           " with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
+
     }
 
 
