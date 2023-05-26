@@ -34,5 +34,12 @@ public class Yard extends SchoolSpace
     }
 
 
+    @Override
+    public void showInfo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
+    }
+
+
 
 }

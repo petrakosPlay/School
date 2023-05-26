@@ -29,4 +29,10 @@ public class Staircase extends SchoolSpace
        
     }
 
+    @Override
+    public void showInfo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
+    }
+
 }

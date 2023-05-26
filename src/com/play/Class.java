@@ -1,6 +1,6 @@
 package com.play;
 
-public class Class 
+public class Class extends SchoolSpace
 {
     private final short MAX_CAPACITY;
     private short currentCapacity;
@@ -17,7 +17,6 @@ public class Class
         currentMembers = new SchoolMember[MAX_CAPACITY];
         System.out.println("A new Class number " + this.classNumber + 
                            " with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
-
     }
 
 

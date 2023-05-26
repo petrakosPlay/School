@@ -3,7 +3,7 @@ package com.play;
 public class SchoolMember 
 {
     protected String name;
-    protected short FloorNumber;
+    protected short floorNumber;
     protected short classNumber;
     protected short currentLocation;
 
@@ -11,7 +11,7 @@ public class SchoolMember
         return name;
     }
     public short getFloorNumber() {
-        return FloorNumber;
+        return floorNumber;
     }
     public short getClassNumber() {
         return classNumber;
