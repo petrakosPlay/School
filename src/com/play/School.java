@@ -7,7 +7,7 @@ public class School
     private Staircase staircase;
     private Floor[] floors;
 
-    public School(short maxClassCapacity, short maxYardCapacity, short maxStaircaseCapacity, short maxCorridorCapacity)
+    public School(short maxYardCapacity, short maxStaircaseCapacity, short maxCorridorCapacity, short maxClassCapacity)
     {
         yard = new Yard(maxYardCapacity);
         staircase = new Staircase(maxStaircaseCapacity);

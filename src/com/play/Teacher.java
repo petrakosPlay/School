@@ -3,10 +3,10 @@ package com.play;
 public class Teacher extends SchoolMember
 {
 
-    Teacher(String name, short classFloor, short classNumber)
+    Teacher(String name, short FloorNumber, short classNumber)
     {
         this.name = name;
-        this.classFloor = classFloor;
+        this.FloorNumber = FloorNumber;
         this.classNumber = classNumber;
     };
    
