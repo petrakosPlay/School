@@ -4,13 +4,15 @@ public class Yard extends SchoolSpace
 {
     
     private final short MAX_CAPACITY;
-    private short currentCapacity;
     private SchoolMember[] currentMembers;
+    private short currentCapacity;
+    private short getIdx;
+    private short putIdx;
 
     public Yard(short maxCapacity)
     {
         this.MAX_CAPACITY = maxCapacity;
-        currentCapacity = 0;
+        currentCapacity = getIdx = putIdx = 0;
         currentMembers = new SchoolMember[MAX_CAPACITY];
         System.out.println("A new Yard with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
@@ -23,7 +25,9 @@ public class Yard extends SchoolSpace
         {
             if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters SchoolYard");
             if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters SchoolYard");
-            currentMembers[currentCapacity++] = schoolMember;
+            currentMembers[putIdx++] = schoolMember;
+            if(putIdx == MAX_CAPACITY) putIdx = 0;
+            currentCapacity++;
             return true;
         }
         else
@@ -36,6 +40,7 @@ public class Yard extends SchoolSpace
 
     @Override
     public void exit(SchoolMember schoolMember) {
+        
     }
 
 
