@@ -1,6 +1,6 @@
 package com.play;
 
-public class SchoolMember 
+public abstract class SchoolMember 
 {
     protected String name;
     protected short floorNumber;
@@ -19,6 +19,8 @@ public class SchoolMember
     public short getCurrentLocation() {
         return currentLocation;
     }
+
+    public abstract void showInfo();
 
 
 }

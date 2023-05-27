@@ -9,5 +9,10 @@ public class Teacher extends SchoolMember
         this.floorNumber = floorNumber;
         this.classNumber = classNumber;
     };
+
+    public void showInfo()
+    {
+        System.out.println("Teacher " + this.name + " is teaching in class " + this.classNumber + " on floor " + this.floorNumber);
+    }
    
 }

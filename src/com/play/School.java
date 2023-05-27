@@ -7,6 +7,7 @@ public class School
     private Staircase staircase;
     private Floor[] floors;
 
+
     public School(short maxYardCapacity, short maxStaircaseCapacity, short maxCorridorCapacity, short maxClassCapacity)
     {
         yard = new Yard(maxYardCapacity);
@@ -17,12 +18,14 @@ public class School
         System.out.println("A new School has been created!");
     }
 
-    public void enter(SchoolMember schoolMember) {
-        System.out.println(schoolMember.getName() + "enters school");
+    public boolean enter (SchoolMember schoolMember) {
+        //System.out.println(schoolMember.getName() + " enters school");
+        return yard.enter(schoolMember);
+
     }
 
     public void exit(SchoolMember schoolMember) {
-        System.out.println(schoolMember.getName() + "exits school");
+        System.out.println(schoolMember.getName() + " exits school");
     }
 
 }

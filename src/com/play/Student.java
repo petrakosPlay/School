@@ -10,11 +10,9 @@ public class Student extends SchoolMember
         this.classNumber = classNumber;
     };
 
-    void print()
+    public void showInfo()
     {
-        System.out.println("Student " + this.name + " is in class " + this.classNumber + " on floor " + this.floorNumber);
+        System.out.println("Student " + this.name + " is studying in class " + this.classNumber + " on floor " + this.floorNumber);
     }
-    
-    
 
 }
