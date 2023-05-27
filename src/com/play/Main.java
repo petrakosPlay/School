@@ -9,15 +9,15 @@ public class Main
 {
     public static void main(String[] args)
     {
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         if(args.length !=4)
         {
             System.out.println("Wrong number of arguments");
             return;
         }
-        
+        //Yard, Stairs, Corridor, Class
         School school = new School(Short.parseShort(args[0]), Short.parseShort(args[1]), Short.parseShort(args[2]), Short.parseShort(args[3]));
         
-
         File file;
         FileReader fReader;
         BufferedReader bReader;
@@ -33,10 +33,15 @@ public class Main
             return;
         }
 
-        student = getNextStudent(bReader);
-        school.enterYard(student);
-        school.exitYard();
-        school.enterStairCase(student);
+
+        boolean yardIsFull = false;
+        while((student = getNextStudent(bReader)) != null && school.getYard().isFull() == false)
+            school.enterYard(student);
+        
+        school.getYard().printCapacity();
+    
+        //school.exitYard();
+        //school.enterStairCase(student);
 
         //school.enterFloor(student);
 
@@ -68,9 +73,13 @@ public class Main
     static Student getNextStudent(BufferedReader bReader)
     {
         Student student = null;
+        String line;
         try {
-            String[] studentData = bReader.readLine().split(",", 0);
-            student = new Student(studentData[0], Short.parseShort(studentData[1]), Short.parseShort(studentData[2]));
+            if ( (line = bReader.readLine()) != null)
+            {
+                String[] studentData = line.split(",", 0);
+                student = new Student(studentData[0], Short.parseShort(studentData[1]), Short.parseShort(studentData[2]));
+            }
         }
         catch (IOException e) {
             e.printStackTrace();

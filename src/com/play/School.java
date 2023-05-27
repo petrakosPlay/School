@@ -18,6 +18,8 @@ public class School
         System.out.println("A new School has been created!");
     }
 
+    public Yard getYard(){return this.yard;};
+    
     public boolean enterYard (SchoolMember schoolMember) {
         return yard.enter(schoolMember);
     }
