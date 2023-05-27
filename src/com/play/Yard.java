@@ -17,12 +17,13 @@ public class Yard extends SchoolSpace
 
 
     @Override
-    public boolean enter(SchoolMember schoolMember) {
+    public boolean enter(SchoolMember schoolMember)
+    {
         if(this.currentCapacity < MAX_CAPACITY)
         {
-            System.out.println(schoolMember.getName() + " enters SchoolYard");
-            currentMembers[currentCapacity] = schoolMember;
-            this.currentCapacity++;
+            if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters SchoolYard");
+            if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters SchoolYard");
+            currentMembers[currentCapacity++] = schoolMember;
             return true;
         }
         else

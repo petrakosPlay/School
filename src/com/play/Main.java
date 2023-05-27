@@ -15,8 +15,6 @@ public class Main
             return;
         }
         
-
-        
         School school = new School(Short.parseShort(args[0]), Short.parseShort(args[1]), Short.parseShort(args[2]), Short.parseShort(args[3]));
         
 
@@ -35,9 +33,15 @@ public class Main
             return;
         }
 
-        
         student = getNextStudent(bReader);
-        school.enter(student);
+        school.enterYard(student);
+        school.enterStairCase(student);
+
+
+
+
+
+
 
 
         try {

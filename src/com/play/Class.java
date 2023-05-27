@@ -21,5 +21,29 @@ public class Class extends SchoolSpace
 
 
 
+    @Override
+    public boolean enter(SchoolMember schoolMember) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'enter'");
+    }
+
+
+
+    @Override
+    public void exit(SchoolMember schoolMember) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'exit'");
+    }
+
+
+
+    @Override
+    public void showInfo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
+    }
+
+
+
 
 }

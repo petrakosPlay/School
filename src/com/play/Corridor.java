@@ -17,17 +17,27 @@ public class Corridor extends SchoolSpace
 
 
     @Override
-    public void enter(SchoolMember schoolMember) {
+    public boolean enter(SchoolMember schoolMember) {
         if(this.currentCapacity < MAX_CAPACITY)
         {
+            if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters SchoolYard");
+            if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters SchoolYard");
             System.out.println(schoolMember.getName() + "enters Corridor");
             this.currentCapacity++;
         }
+        return true;
     }
 
 
     @Override
     public void exit(SchoolMember schoolMember) {
        
+    }
+
+
+    @Override
+    public void showInfo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
     }    
 }

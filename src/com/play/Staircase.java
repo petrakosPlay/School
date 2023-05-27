@@ -16,13 +16,22 @@ public class Staircase extends SchoolSpace
     }
 
     @Override
-    public void enter(SchoolMember schoolMember) {
+    public boolean enter(SchoolMember schoolMember)
+    {
         if(this.currentCapacity < MAX_CAPACITY)
         {
-            System.out.println(schoolMember.getName() + "enters Staircase");
-            this.currentCapacity++;
+            if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters StairCase");
+            if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters StairCase");
+            currentMembers[currentCapacity++] = schoolMember;
+            return true;
+        }
+        else
+        {
+            System.out.println("StairCase is full");
+            return false;
         }
     }
+
 
     @Override
     public void exit(SchoolMember schoolMember) {
