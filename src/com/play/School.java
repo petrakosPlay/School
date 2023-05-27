@@ -26,8 +26,8 @@ public class School
         return stairCase.enter(schoolMember);
     }
     
-    public void exit(SchoolMember schoolMember) {
-        System.out.println(schoolMember.getName() + " exits school");
+    public boolean exitYard() {
+        return yard.exit();
     }
 
 }

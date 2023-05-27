@@ -34,8 +34,8 @@ public class Staircase extends SchoolSpace
 
 
     @Override
-    public void exit(SchoolMember schoolMember) {
-       
+    public boolean exit() {
+       return true;
     }
 
     @Override

@@ -35,7 +35,9 @@ public class Main
 
         student = getNextStudent(bReader);
         school.enterYard(student);
+        school.exitYard();
         school.enterStairCase(student);
+
         //school.enterFloor(student);
 
 

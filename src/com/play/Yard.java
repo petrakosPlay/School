@@ -24,7 +24,7 @@ public class Yard extends SchoolSpace
         if(this.currentCapacity < MAX_CAPACITY)
         {
             if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters SchoolYard");
-            if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters SchoolYard");
+            //if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters SchoolYard");
             currentMembers[putIdx++] = schoolMember;
             if(putIdx == MAX_CAPACITY) putIdx = 0;
             currentCapacity++;
@@ -39,7 +39,17 @@ public class Yard extends SchoolSpace
 
 
     @Override
-    public void exit(SchoolMember schoolMember) {
+    public boolean exit() {
+        if(currentCapacity > 0)
+        {
+            System.out.println("Student " + currentMembers[getIdx].getName() + " exits SchoolYard");
+            currentMembers[getIdx++] = null;
+            if(getIdx == MAX_CAPACITY) getIdx = 0;
+            currentCapacity--;
+            return true;
+        }
+        return false;
+
         
     }
 
