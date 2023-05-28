@@ -19,6 +19,7 @@ public class Yard extends SchoolSpace
 
     public short getCurrentCapacity(){return this.currentCapacity;};
     public boolean isFull() {return currentCapacity == MAX_CAPACITY ? true : false;};
+    public boolean isEmpty() {return currentCapacity == 0 ? true : false;};
     public void printCapacity() {System.out.println("Yard current capacity is: " + Short.toString(this.getCurrentCapacity()));}
 
     @Override
@@ -42,18 +43,18 @@ public class Yard extends SchoolSpace
 
 
     @Override
-    public boolean exit() {
+    public SchoolMember exit()
+    {
+        SchoolMember schoolMember = null;
         if(currentCapacity > 0)
         {
             System.out.println("Student " + currentMembers[getIdx].getName() + " exits SchoolYard");
+            schoolMember = currentMembers[getIdx];
             currentMembers[getIdx++] = null;
             if(getIdx == MAX_CAPACITY) getIdx = 0;
             currentCapacity--;
-            return true;
         }
-        return false;
-
-        
+        return schoolMember;        
     }
 
 

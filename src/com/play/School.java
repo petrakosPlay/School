@@ -21,16 +21,19 @@ public class School
     public Yard getYard(){return this.yard;};
     public Staircase getStaircase(){return this.staircase;};
     
+    
     public boolean enterYard (SchoolMember schoolMember) {
         return yard.enter(schoolMember);
     }
+    public SchoolMember exitYard() {
+        return yard.exit();
+    }
 
+    
     public boolean enterStaircase(SchoolMember schoolMember) {
         return staircase.enter(schoolMember);
     }
     
-    public boolean exitYard() {
-        return yard.exit();
-    }
+    
 
 }

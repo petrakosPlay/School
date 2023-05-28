@@ -33,21 +33,29 @@ public class Main
             return;
         }
 
+        boolean schoolIsFull = false;
+        SchoolMember schoolMember = null;
 
-        while((student = getNextStudent(bReader)) != null)
+        while(schoolIsFull == false)
         {
-            boolean yardIsFull = false;
-            while(school.getYard().isFull() == false)
+            /* push to Yard */
+            while((student = getNextStudent(bReader)) != null && school.getYard().isFull() == false)
                 school.enterYard(student);
             
-            boolean staircaseIsFull = false;
-            while(school.getStaircase().isFull ==false)
+            while(school.getYard().isEmpty() == false && school.getStaircase().isFull() ==false)
             {
-                school.exitYard();
+                student = (Student) school.exitYard();
                 school.enterStaircase(student);
             }
+            
+            if(school.getYard().isFull() && school.getStaircase().isFull())
+                schoolIsFull = true;
+ 
         }
-        //school.exitYard();
+
+        System.out.println("School is full!");
+
+            //school.exitYard();
 
 
         //school.enterStairCase(student);
