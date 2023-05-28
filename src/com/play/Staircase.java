@@ -6,17 +6,20 @@ public class Staircase extends SchoolSpace
     private final short MAX_CAPACITY;
     private short currentCapacity;
     private SchoolMember[] currentMembers;
+    private short getIdx;
+    private short putIdx;
 
     public Staircase(short maxCapacity)
     {
         this.MAX_CAPACITY = maxCapacity;
-        currentCapacity = 0;
+        currentCapacity = getIdx = putIdx = 0;
         currentMembers = new SchoolMember[MAX_CAPACITY];
         System.out.println("A new Staircase with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
 
     public short getCurrentCapacity(){return this.currentCapacity;};
     public boolean isFull() {return currentCapacity == MAX_CAPACITY ? true : false;};
+    public boolean isEmpty() {return currentCapacity == 0 ? true : false;};
     public void printCapacity() {System.out.println("Staircase current capacity is: " + Short.toString(this.getCurrentCapacity()));}
 
     @Override
@@ -25,8 +28,9 @@ public class Staircase extends SchoolSpace
         if(this.currentCapacity < MAX_CAPACITY)
         {
             if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters StairCase");
-            if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters StairCase");
-            currentMembers[currentCapacity++] = schoolMember;
+            currentMembers[putIdx++] = schoolMember;
+            if(putIdx == MAX_CAPACITY) putIdx = 0;
+            currentCapacity++;
             return true;
         }
         else
@@ -36,10 +40,19 @@ public class Staircase extends SchoolSpace
         }
     }
 
-
     @Override
-    public boolean exit() {
-       return true;
+    public SchoolMember exit()
+    {
+        SchoolMember schoolMember = null;
+        if(currentCapacity > 0)
+        {
+            System.out.println("Student " + currentMembers[getIdx].getName() + " exits SchoolYard");
+            schoolMember = currentMembers[getIdx];
+            currentMembers[getIdx++] = null;
+            if(getIdx == MAX_CAPACITY) getIdx = 0;
+            currentCapacity--;
+        }
+        return schoolMember;        
     }
 
     @Override

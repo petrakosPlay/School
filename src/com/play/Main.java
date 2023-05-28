@@ -36,8 +36,8 @@ public class Main
         boolean schoolIsFull = false;
         SchoolMember schoolMember = null;
 
-        while(schoolIsFull == false)
-        {
+        //while(schoolIsFull == false)
+        //{
             /* push to Yard */
             while((student = getNextStudent(bReader)) != null && school.getYard().isFull() == false)
                 school.enterYard(student);
@@ -48,10 +48,17 @@ public class Main
                 school.enterStaircase(student);
             }
             
-            if(school.getYard().isFull() && school.getStaircase().isFull())
-                schoolIsFull = true;
+            while(school.getStaircase().isEmpty() == false)// && school.getStaircase().isFull() ==false)
+            {
+                student = (Student) school.exitStraircase();
+                //school.enterStaircase(student);
+            }
+
+
+            //if(school.getYard().isFull() && school.getStaircase().isFull())
+            //    schoolIsFull = true;
  
-        }
+        //}
 
         System.out.println("School is full!");
 

@@ -33,7 +33,9 @@ public class School
     public boolean enterStaircase(SchoolMember schoolMember) {
         return staircase.enter(schoolMember);
     }
-    
+    public SchoolMember exitStraircase() {
+        return staircase.exit();
+    }
     
 
 }
