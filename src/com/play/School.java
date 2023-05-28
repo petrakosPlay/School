@@ -36,6 +36,10 @@ public class School
     public SchoolMember exitStraircase() {
         return staircase.exit();
     }
-    
+
+
+    public boolean enterFloor(SchoolMember schoolMember) {
+        return floors[schoolMember.getFloorNumber()].getCorridor().enter(schoolMember);
+    }
 
 }

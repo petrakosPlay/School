@@ -51,13 +51,8 @@ public class Main
             while(school.getStaircase().isEmpty() == false)// && school.getStaircase().isFull() ==false)
             {
                 student = (Student) school.exitStraircase();
-                //school.enterStaircase(student);
+                school.enterFloor(student);
             }
-
-
-            //if(school.getYard().isFull() && school.getStaircase().isFull())
-            //    schoolIsFull = true;
- 
         //}
 
         System.out.println("School is full!");

@@ -1,7 +1,7 @@
 package com.play;
 
-public class Floor extends SchoolSpace {
-    
+public class Floor
+{
     private final static short NUMBER_OF_CLASSES = 6;
     private Corridor corridor;
     private Class[] classes;
@@ -18,30 +18,12 @@ public class Floor extends SchoolSpace {
         System.out.println("Floor number " + this.floorNumber + " has been created");
     }
 
+    public Corridor getCorridor(){return this.corridor;};
 
-    @Override
-    public void enter(SchoolMember schoolMember) {
+
+    public boolean enter(SchoolMember schoolMember) {
         System.out.println(schoolMember.getName() + "enters Floor");
-        
+        return corridor.enter(schoolMember);
     }
 
-
-    @Override
-    public void exit(SchoolMember schoolMember) {
-      
-    }
-
-
-    @Override
-    public boolean exit() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exit'");
-    }
-
-
-    @Override
-    public void showInfo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
-    }
 }
