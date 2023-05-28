@@ -2,19 +2,14 @@ package com.play;
 
 public class Class extends SchoolSpace
 {
-    private final short MAX_CAPACITY;
-    private short currentCapacity;
-    private SchoolMember[] currentMembers;
     private byte classNumber;
 
 
 
     public Class(byte classNumber, short maxCapacity)
     {
-        this.MAX_CAPACITY = maxCapacity;
-        this.currentCapacity = 0;
+        super(maxCapacity);
         this.classNumber = classNumber;
-        currentMembers = new SchoolMember[MAX_CAPACITY];
         System.out.println("A new Class number " + this.classNumber + 
                            " with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
@@ -28,9 +23,8 @@ public class Class extends SchoolSpace
     }
 
 
-
     @Override
-    public void exit(SchoolMember schoolMember) {
+    public SchoolMember exit() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'exit'");
     }
@@ -38,9 +32,9 @@ public class Class extends SchoolSpace
 
 
     @Override
-    public void showInfo() {
+    public void printCapacity() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
+        throw new UnsupportedOperationException("Unimplemented method 'printCapacity'");
     }
 
 

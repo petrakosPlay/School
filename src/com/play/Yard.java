@@ -2,25 +2,11 @@ package com.play;
 
 public class Yard extends SchoolSpace
 {
-    
-    private final short MAX_CAPACITY;
-    private SchoolMember[] currentMembers;
-    private short currentCapacity;
-    private short getIdx;
-    private short putIdx;
-
     public Yard(short maxCapacity)
     {
-        this.MAX_CAPACITY = maxCapacity;
-        currentCapacity = getIdx = putIdx = 0;
-        currentMembers = new SchoolMember[MAX_CAPACITY];
+        super(maxCapacity);
         System.out.println("A new Yard with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
-
-    public short getCurrentCapacity(){return this.currentCapacity;};
-    public boolean isFull() {return currentCapacity == MAX_CAPACITY ? true : false;};
-    public boolean isEmpty() {return currentCapacity == 0 ? true : false;};
-    public void printCapacity() {System.out.println("Yard current capacity is: " + Short.toString(this.getCurrentCapacity()));}
 
     @Override
     public boolean enter(SchoolMember schoolMember)
@@ -28,7 +14,6 @@ public class Yard extends SchoolSpace
         if(this.currentCapacity < MAX_CAPACITY)
         {
             if(schoolMember instanceof Student) System.out.println("Student " + schoolMember.getName() + " enters SchoolYard");
-            //if(schoolMember instanceof Teacher) System.out.println("Teacher " + schoolMember.getName() + " enters SchoolYard");
             currentMembers[putIdx++] = schoolMember;
             if(putIdx == MAX_CAPACITY) putIdx = 0;
             currentCapacity++;
@@ -59,9 +44,8 @@ public class Yard extends SchoolSpace
 
 
     @Override
-    public void showInfo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
+    public void printCapacity() {
+        System.out.println("Yard current capacity is: " + Short.toString(this.getCurrentCapacity()));
     }
 
 

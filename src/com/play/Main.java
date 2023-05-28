@@ -33,8 +33,8 @@ public class Main
             return;
         }
 
-        boolean schoolIsFull = false;
-        SchoolMember schoolMember = null;
+        //boolean schoolIsFull = false;
+        //SchoolMember schoolMember = null;
 
         //while(schoolIsFull == false)
         //{
