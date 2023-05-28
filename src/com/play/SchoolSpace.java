@@ -18,7 +18,8 @@ public abstract class SchoolSpace
     public short getCurrentCapacity(){return this.currentCapacity;};
     public boolean isFull() {return currentCapacity == MAX_CAPACITY ? true : false;};
     public boolean isEmpty() {return currentCapacity == 0 ? true : false;};
-
+    
+    public abstract void print();
     public abstract boolean enter(SchoolMember schoolMember);
     public abstract SchoolMember exit();
     //public abstract void showInfo();

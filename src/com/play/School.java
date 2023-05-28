@@ -42,4 +42,10 @@ public class School
         return floors[schoolMember.getFloorNumber()].getCorridor().enter(schoolMember);
     }
 
+    public void print()
+    {
+        yard.print();
+
+    }
+
 }

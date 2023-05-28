@@ -48,6 +48,17 @@ public class Yard extends SchoolSpace
         System.out.println("Yard current capacity is: " + Short.toString(this.getCurrentCapacity()));
     }
 
+    @Override
+    public void print() {
+        if(currentCapacity > 0)
+        {
+            System.out.println("The Yard currently has the following " + currentCapacity + " members:");
+            for(int i=0 ; i<MAX_CAPACITY ; ++i) 
+                if(currentMembers[i] != null) System.out.println(currentMembers[i].getName());
+        }
+        else System.out.println("The yard is empty");
+    }
+
 
 
 }

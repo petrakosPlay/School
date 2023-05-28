@@ -55,15 +55,9 @@ public class Main
             }
         //}
 
-        System.out.println("School is full!");
 
-            //school.exitYard();
-
-
-        //school.enterStairCase(student);
-
-        //school.enterFloor(student);
-
+        school.print();
+        //System.out.println("School is full!");
 
 
 
