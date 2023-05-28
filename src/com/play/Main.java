@@ -34,13 +34,22 @@ public class Main
         }
 
 
-        boolean yardIsFull = false;
-        while((student = getNextStudent(bReader)) != null && school.getYard().isFull() == false)
-            school.enterYard(student);
-        
-        school.getYard().printCapacity();
-    
+        while((student = getNextStudent(bReader)) != null)
+        {
+            boolean yardIsFull = false;
+            while(school.getYard().isFull() == false)
+                school.enterYard(student);
+            
+            boolean staircaseIsFull = false;
+            while(school.getStaircase().isFull ==false)
+            {
+                school.exitYard();
+                school.enterStaircase(student);
+            }
+        }
         //school.exitYard();
+
+
         //school.enterStairCase(student);
 
         //school.enterFloor(student);

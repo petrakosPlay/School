@@ -15,6 +15,10 @@ public class Staircase extends SchoolSpace
         System.out.println("A new Staircase with a maximum capacity of " + this.MAX_CAPACITY + " students has been created!");
     }
 
+    public short getCurrentCapacity(){return this.currentCapacity;};
+    public boolean isFull() {return currentCapacity == MAX_CAPACITY ? true : false;};
+    public void printCapacity() {System.out.println("Staircase current capacity is: " + Short.toString(this.getCurrentCapacity()));}
+
     @Override
     public boolean enter(SchoolMember schoolMember)
     {

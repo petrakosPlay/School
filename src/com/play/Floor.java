@@ -30,4 +30,18 @@ public class Floor extends SchoolSpace {
     public void exit(SchoolMember schoolMember) {
       
     }
+
+
+    @Override
+    public boolean exit() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'exit'");
+    }
+
+
+    @Override
+    public void showInfo() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'showInfo'");
+    }
 }
