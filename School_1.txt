@@ -1,0 +1,5 @@
+School
+- Add more things to abstract class?
+- Use interface instead?
+- Could use threads to simulate entering and exiting School spaces.
+
